@@ -1,7 +1,8 @@
-import { Hand, MousePointer2, Maximize2, X, ArrowDown, ArrowUp, Volume2, VolumeX, Sun, SunDim, Camera, Cpu, Eye, Sparkles, Github, GraduationCap, Code2, Zap, ShieldCheck, Settings, Target, BarChart3 } from "lucide-react";
+import { Hand, MousePointer2, Maximize2, X, ArrowDown, ArrowUp, Volume2, VolumeX, Sun, SunDim, Camera, Cpu, Eye, Sparkles, Github, GraduationCap, Code2, Zap, ShieldCheck, Settings, Target, BarChart3, Terminal, PlayCircle } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import GestureDemo from "@/components/GestureDemo";
 
 const gestures = [
   { icon: MousePointer2, name: "Index finger only", action: "Move mouse cursor" },
