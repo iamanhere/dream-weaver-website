@@ -138,6 +138,9 @@ const Index = () => {
         </div>
       </header>
 
+      {/* Live Demo */}
+      <GestureDemo />
+
       {/* About / Problem */}
       <section id="about" className="py-24 container mx-auto">
         <div className="grid md:grid-cols-2 gap-10">
