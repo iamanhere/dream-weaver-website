@@ -1,7 +1,8 @@
-import { Hand, MousePointer2, Maximize2, X, ArrowDown, ArrowUp, Volume2, VolumeX, Sun, SunDim, Camera, Cpu, Eye, Sparkles, Github, GraduationCap, Code2, Zap, ShieldCheck, Settings, Target, BarChart3 } from "lucide-react";
+import { Hand, MousePointer2, Maximize2, X, ArrowDown, ArrowUp, Volume2, VolumeX, Sun, SunDim, Camera, Cpu, Eye, Sparkles, Github, GraduationCap, Code2, Zap, ShieldCheck, Settings, Target, BarChart3, Terminal, PlayCircle } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import GestureDemo from "@/components/GestureDemo";
 
 const gestures = [
   { icon: MousePointer2, name: "Index finger only", action: "Move mouse cursor" },
@@ -83,6 +84,7 @@ const Index = () => {
           </div>
           <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
             <a href="#about" className="hover:text-primary transition">About</a>
+            <a href="#demo" className="hover:text-primary transition">Demo</a>
             <a href="#gestures" className="hover:text-primary transition">Gestures</a>
             <a href="#modules" className="hover:text-primary transition">Modules</a>
             <a href="#code" className="hover:text-primary transition">Code</a>
@@ -109,6 +111,9 @@ const Index = () => {
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Button size="lg" className="bg-gradient-primary text-primary-foreground border-0 shadow-elegant hover:opacity-90">
+                <a href="#demo" className="flex items-center gap-2">Try Live Demo <PlayCircle className="w-4 h-4" /></a>
+              </Button>
+              <Button size="lg" variant="outline" className="border-border">
                 <a href="#gestures" className="flex items-center gap-2">Explore Gestures <Hand className="w-4 h-4" /></a>
               </Button>
               <Button size="lg" variant="outline" className="border-border">
@@ -132,6 +137,9 @@ const Index = () => {
           </div>
         </div>
       </header>
+
+      {/* Live Demo */}
+      <GestureDemo />
 
       {/* About / Problem */}
       <section id="about" className="py-24 container mx-auto">
@@ -298,7 +306,58 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Team */}
+      {/* Run Locally */}
+      <section id="run-locally" className="py-24 container mx-auto">
+        <div className="text-center mb-10">
+          <Badge className="bg-accent/10 text-accent border border-accent/30 mb-3">
+            <Terminal className="w-3 h-3 mr-1" /> Real OS Control
+          </Badge>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Run It <span className="text-gradient">Locally</span></h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            The browser demo above shows gesture recognition. To actually move your system cursor,
+            click, scroll, and adjust volume/brightness, run the Python backend on your own machine —
+            browsers can't control the OS for security reasons.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          <Card className="bg-gradient-card border-border">
+            <CardHeader>
+              <CardTitle className="text-lg flex items-center gap-2">
+                <span className="w-7 h-7 rounded-full bg-primary/15 text-primary flex items-center justify-center text-sm font-bold">1</span>
+                Install dependencies
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <pre className="bg-[hsl(230_35%_5%)] border border-border rounded-lg p-4 text-xs font-mono text-muted-foreground overflow-auto">
+{`pip install opencv-python mediapipe \\
+  pyautogui pynput numpy`}
+              </pre>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-gradient-card border-border">
+            <CardHeader>
+              <CardTitle className="text-lg flex items-center gap-2">
+                <span className="w-7 h-7 rounded-full bg-primary/15 text-primary flex items-center justify-center text-sm font-bold">2</span>
+                Run the script
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <pre className="bg-[hsl(230_35%_5%)] border border-border rounded-lg p-4 text-xs font-mono text-muted-foreground overflow-auto">
+{`python gesture_mouse.py
+
+# Press 'q' in the camera window to quit`}
+              </pre>
+            </CardContent>
+          </Card>
+        </div>
+        <p className="text-center text-xs text-muted-foreground mt-6">
+          Tested on macOS (uses AppleScript for volume/brightness). Works on Windows/Linux with minor tweaks.
+        </p>
+      </section>
+
+
       <section id="team" className="py-24 container mx-auto">
         <div className="text-center mb-14">
           <Badge className="bg-accent/10 text-accent border border-accent/30 mb-3"><GraduationCap className="w-3 h-3 mr-1" /> LY BDCE · Group 07</Badge>
