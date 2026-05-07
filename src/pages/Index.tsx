@@ -111,7 +111,7 @@ const Index = () => {
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Button asChild size="lg" className="bg-gradient-primary text-primary-foreground border-0 shadow-elegant hover:opacity-90">
-                <a href="/scripts/gesture_mouse.py" download className="flex items-center gap-2">
+                <a href="/scripts/gesture_mouse_scripts.zip" download className="flex items-center gap-2">
                   Try Live Demo <PlayCircle className="w-4 h-4" />
                 </a>
               </Button>
