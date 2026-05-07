@@ -308,53 +308,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Download Scripts */}
-      <section id="scripts" className="py-24 container mx-auto">
-        <div className="text-center mb-10">
-          <Badge className="bg-primary/10 text-primary border border-primary/30 mb-3">
-            <Code2 className="w-3 h-3 mr-1" /> PyCharm Ready
-          </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Backend <span className="text-gradient">Python Scripts</span></h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Download the actual <code className="text-primary">.py</code> files and open them in PyCharm to run on your own system.
-            Browsers cannot launch desktop apps directly — click <span className="text-foreground font-semibold">Download</span>, then
-            right-click the saved file → <span className="text-foreground font-semibold">Open With → PyCharm</span>.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-10">
-          {[
-            { file: "gesture_mouse.py", title: "Gesture Mouse (Full)", desc: "Complete gesture-controlled mouse with cursor, clicks, scroll, volume & brightness." },
-            { file: "hand_tracking.py", title: "Hand Tracking (Basic)", desc: "Minimal MediaPipe hand-landmark tracker — great starting point." },
-          ].map((s) => (
-            <Card key={s.file} className="bg-gradient-card border-border">
-              <CardHeader>
-                <CardTitle className="text-lg flex items-center gap-2">
-                  <Terminal className="w-5 h-5 text-primary" /> {s.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-4">{s.desc}</p>
-                <div className="flex flex-wrap gap-2">
-                  <Button asChild className="bg-gradient-primary text-primary-foreground border-0 shadow-elegant hover:opacity-90">
-                    <a href={`/scripts/${s.file}`} download>⬇ Download {s.file}</a>
-                  </Button>
-                  <Button asChild variant="outline" className="border-border">
-                    <a href={`/scripts/${s.file}`} target="_blank" rel="noreferrer">View Source</a>
-                  </Button>
-                  <Button asChild variant="outline" className="border-border">
-                    <a href={`jetbrains://pycharm/navigate/reference?path=${s.file}`}>Open in PyCharm</a>
-                  </Button>
-                </div>
-                <p className="text-xs text-muted-foreground mt-3 font-mono">
-                  Tip: associate <code>.py</code> with PyCharm so double-click opens it instantly.
-                </p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
-
       {/* Run Locally */}
       <section id="run-locally" className="py-24 container mx-auto">
         <div className="text-center mb-10">
