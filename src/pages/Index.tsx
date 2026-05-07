@@ -110,8 +110,10 @@ const Index = () => {
               cursor, clicks, scroll, volume, brightness and more, powered by MediaPipe & PyAutoGUI.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <Button size="lg" className="bg-gradient-primary text-primary-foreground border-0 shadow-elegant hover:opacity-90">
-                <a href="#demo" className="flex items-center gap-2">Try Live Demo <PlayCircle className="w-4 h-4" /></a>
+              <Button asChild size="lg" className="bg-gradient-primary text-primary-foreground border-0 shadow-elegant hover:opacity-90">
+                <a href="/scripts/gesture_mouse.py" download className="flex items-center gap-2">
+                  Try Live Demo <PlayCircle className="w-4 h-4" />
+                </a>
               </Button>
               <Button size="lg" variant="outline" className="border-border">
                 <a href="#gestures" className="flex items-center gap-2">Explore Gestures <Hand className="w-4 h-4" /></a>
